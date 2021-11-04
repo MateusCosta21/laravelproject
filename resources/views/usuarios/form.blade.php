@@ -1,12 +1,11 @@
 @extends('layouts.app')
-
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
-
+                <div class="card-header"><div class="card-header"><a class="btn btn-warning" href="{{ url('usuarios/') }}">Voltar</a></div>
+                </div>
                 <div class="card-body">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
@@ -43,7 +42,7 @@
                                 <input type="text" name="data_nascimento" class="form-control" value="{{$usuario->data_nascimento}}">
                             </div>
 
-                            <button type="submit" class="btn btn-primary">Cadastrar</button>
+                            <button type="submit" class="btn btn-primary">Alterar</button>
                         </form>
                         @else
 

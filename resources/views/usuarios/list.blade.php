@@ -3,9 +3,9 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="card">
-                <div class="card-header"><a href="{{ url('usuarios/new') }}">Novo usuario</a></div>
+                <div class="card-header"><a class="btn btn-success" href="{{ url('usuarios/new') }}">Novo usuario</a></div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -15,14 +15,14 @@
                     @endif
 
                     <h1> Usuários</h1>
-                        <table class="table">
+                        <table class="table table-bordered">
                             <thead>
                             <tr>
                                 <th scope="col">Nome</th>
-                                <th scope="col">Cpf</th>
-                                <th scope="col">telefone</th>
+                                <th scope="col">Número Cpf</th>
+                                <th scope="col"> Número de telefone</th>
                                 <th scope="col">Senha</th>
-                                <th scope="col">Data Nascimento</th>
+                                <th scope="col">Data de Nascimento</th>
 
                                 <th scope="col">Editar</th>
                                 <th scope="col">Deletar</th>
@@ -35,7 +35,7 @@
                                     <td>{{$u->cpf}}</td>
                                     <td>{{$u->telefone}}</td>
                                     <td>{{$u->senha}}</td>
-                                    <td>{{$u->data_nascimento}}</td>
+                                    <td>{{ \Carbon\Carbon::parse($u->data_nascimento)->format('d/m/Y')}}</td>
                                     <td>
                                         <a href="usuarios/{{ $u-> id}}/edit" class="btn-btn-info">Editar</a>
                                     </td>

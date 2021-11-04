@@ -19,7 +19,7 @@ class CreateUsuariosTable extends Migration
             $table->char('cpf', 14);
             $table->char('telefone', 16);
             $table->char('senha', 15);
-            $table->date('data_nascimento');
+            $table-> date('data_nascimento');
             $table->timestamps();
         });
     }

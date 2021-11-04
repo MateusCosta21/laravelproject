@@ -15,7 +15,7 @@
                     @endif
 
                     <h1> Você está logado</h1>
-                    <a href="{{ url('usuarios') }}">Lista usuarios</a>
+                    <a class="btn btn-dark" href="{{ url('usuarios') }}">Lista usuarios</a>
                 </div>
             </div>
         </div>
